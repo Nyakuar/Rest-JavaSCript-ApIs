@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">Welcome to Greens Kiosk</h1>
+    <p>We sell fruits and vegetables</p>
+    <h2>Products</h2>
+    <ul id="products">
+          <!-- Show products list from API -->
+        <script>
+            const list=document.getElementById("products")
+            let displayList=[]
+            $.getJSON('/products',function(products){
+                displayList=products;
+                console.log(displayList)
+            })
+
+        </script>
+    </ul>
+    <h3>Fruits</h3>
+    <ul id="fruList">
+         <script>
+            const mylist=document.getElementById("products")
+            let displaysList=[]
+            $.getJSON('/products/fruits',function(products){
+                displaysList=products;
+                console.log(displaysList)
+             
+            })
+        </script>
+        
+    </ul>
+    <h3>Vegetables</h3>
+    <ul id="vegList">
+        <!-- Show vegetables from API -->
+        <script>
+            const listDisplay=document.getElementById("products")
+            let displaysLists=[]
+            $.getJSON('/products/vegetables',function(products){
+                displayLists=products;
+
+                console.log(displaysLists)
+             
+            })
+
+        </script>
+
+    </ul>
+    <script src="Greenskiosk.js"></script>
+    <script src="rest.js"></script>
+    <script src="server.js"></script>
+
+ </body>
+ </html>
+</body>
+</html>
